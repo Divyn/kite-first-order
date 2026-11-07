@@ -1,0 +1,28 @@
+$ python3 first_order.py --mock
+Logged in as AB1234 | exchanges: BFO, MCX, NSE, CDS, BSE, BCD, MF, NFO
+Cash available for equity: 99725.05
+Holdings: 2
+   AARON: 1 shares, bought at 161.00, now 352.95
+   SBIN: 16 shares, bought at 801.78, now 762.45
+Live price: Insufficient permission for that call. (the free Personal app has no market data)
+
+$ python3 first_order.py SBIN 300 --mock
+Logged in as AB1234 | exchanges: BFO, MCX, NSE, CDS, BSE, BCD, MF, NFO
+Cash available for equity: 99725.05
+Holdings: 2
+   AARON: 1 shares, bought at 161.00, now 352.95
+   SBIN: 16 shares, bought at 801.78, now 762.45
+Live price: Insufficient permission for that call. (the free Personal app has no market data)
+Placed order 171229000724687 | BUY 1 SBIN LIMIT 300.0
+Status: PUT ORDER REQ RECEIVED -> VALIDATION PENDING -> OPEN PENDING -> OPEN
+After cancel: CANCELLED | cancelled quantity: 1
+
+$ python3 first_order.py SBIN 300 --mock --wrong-ip
+Logged in as AB1234 | exchanges: BFO, MCX, NSE, CDS, BSE, BCD, MF, NFO
+Cash available for equity: 99725.05
+Holdings: 2
+   AARON: 1 shares, bought at 161.00, now 352.95
+   SBIN: 16 shares, bought at 801.78, now 762.45
+Live price: Insufficient permission for that call. (the free Personal app has no market data)
+Order failed: IP is not allowed to place orders for this app. Update allowed IPs on the Kite developer console
+(exit 1)
